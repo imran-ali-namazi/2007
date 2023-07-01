@@ -1,0 +1,14 @@
+<!--post_id: 25 / post_date: 2009-09-26 00:04:01-->
+A tool I wrote myself back in October 07, I find this a must have whenever I am working on a website. It tracks changed files and given a local and ftp base path, will upload all files.
+
+It uses the following:
+
+System.IO.FileSystemWatcher - to track modified files
+
+FtpWebRequest - to create folders and upload / delete files
+
+HttpWebRequest - additional feature to get response for a url. It can be used to quickly test / debug code. Especially when xml has errors and will not be shown in browsers.
+
+Essentially a one-day-application, this version is highly user-unfriendly with un-seeable triggers for functions (see Log_KeyDown and Files_KeyDown).
+
+The source code can be had <a href="http://cselian.com/FTPSync v1.3.zip.zip">here</a>.

@@ -1,0 +1,11 @@
+<!--post_id: 61 / post_date: 2011-06-29 02:00:07-->
+[tab: PS]
+I like the console app for cakephp which generates code, but have found the command line wizard a bit tedious. I've always dream't of finding a nice gui for invoking a series of commands. Finally I set about writing one
+
+You can download the <a href="http://cselian.com/d/code/apps/baker/Baker%20v.2.zip">zip here.<!--more--></a>
+
+[tab: SS]
+<img src="http://cselian.com/d/code/apps/baker/baker.png" alt="" />
+
+[tab: c#]
+[iframe src="http://cselian.com/d/code/serve.php?file=./apps/baker/BakerForm.cs"]

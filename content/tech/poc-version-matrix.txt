@@ -1,0 +1,12 @@
+<!--post_id: 60 / post_date: 2011-06-26 11:10:21-->
+Im looking for a nice way to maintain inter-product dependancy matrix.
+
+For example:
+<a href="https://addons.mozilla.org/en-US/firefox/addon/firebug/versions/">firebug</a>
+ (v 1.4.5 for Firefox 3.0)
+
+<a href="https://github.com/sharparchitecture/Sharp-Architecture/downloads">S#arp</a>
+( v 1.6 for VS 2008)
+
+This should present data in a matrix format and have apis with codeplex, github etc)
+

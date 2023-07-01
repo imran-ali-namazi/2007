@@ -1,0 +1,29 @@
+<!--post_id: 52 / post_date: 2011-06-11 02:35:29-->
+<h4><a href="http://en.wikipedia.org/wiki/Object-relational_mapping">Orm</a></h4>
+Entities and their maps are managed in Excel and generated using <a title="QGen – Code Generator" href="http://cselian.com/blog/tech/apps/qgen-code-generator/">QGen</a>.
+<ul>
+	<li>Entity has Id and auditing columns (created / updated).</li>
+	<li>TableName, fieldNames and Captions are defined in an EntityMap.</li>
+	<li>DBManager (base class)
+<ul>
+	<li>Generates Insert / Update based on Id = default or not.</li>
+	<li>Loads one / list using db reader given constructor as argument.</li>
+	<li>Fluently build DbCommand with sql string and named parameters.</li>
+	<li>Execute command with an expected rows to update and message to throw if rowcount not expected.</li>
+</ul>
+</li>
+</ul>
+<h4><!--more-->UI Fwk</h4>
+<ul>
+	<li>Generic List / View and Edit Control (takes FielCollection)</li>
+	<li>Gets FieldCollection from postback so that saving can be (caught in pageload) done before reload. Again, uses no runat server controls.</li>
+	<li>Special Fields (like radio button with key / value) can be plugged in. Key / val defined in Orm layer.</li>
+</ul>
+<h4>Tree Displaying</h4>
+Given a parentid, a flat List&lt;T&gt; can be loaded hierarchically using FindAll / ForEach and AddRange.
+
+Displaying can be done with a combination of ul / li calling a recursive function.
+
+Both these can be seen <a title="displaying tree info" href="http://cselian.com/blog/tech/snippets/displaying-tree-info/">here</a>.
+<h4>Conclusion</h4>
+Still in gestation, I will cleanup and upload this project later.

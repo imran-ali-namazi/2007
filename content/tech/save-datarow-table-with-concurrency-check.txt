@@ -1,0 +1,14 @@
+<!--post_id: 94 / post_date: 2011-11-15 23:03:06-->
+[tab:PS]
+You can initialize a dataadaptor with a top 0 * from table, pass that to a SqlCommandBuilder to get insert / update commands.
+
+If you set the ConflictOption of the builder to OverwriteChanges, it will not use all the fields in the where condition (default option CompareAllSearchableValues)
+
+To change the rowversion, you need to adapt the command, add rowversion in the where condition so that ado.net throws a DBConcurrencyException if it has been changed by another user.
+
+Modifying the da.UpdateCommand does not seem to change the actual query run on the db for the individual row. You need to then hook the DataAdapter's RowUpdating event. This gives the command per row. of course, if its an insert, you do nothing because defaults are specified in the db.
+
+Lastly, once the update is made in the db, we need to change the rowversion in the datarow because otherwise the second save will fail.
+<!--more-->
+[tab:Code]
+[iframe src="http://cselian.com/d/code/serve.php?file=./snippets/AdoSaveWithRowVersion.cs"]

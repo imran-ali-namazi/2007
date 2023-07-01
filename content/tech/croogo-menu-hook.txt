@@ -1,0 +1,21 @@
+<!--post_id: 68 / post_date: 2011-08-12 03:45:25-->
+The plugin bootstrapper can add a normal menu just like an admin menu.
+
+All you need to do is add a method to app\libs\croogo.php<!--more-->
+<pre class="brush: php">    public function hookMenu($pluginName) {
+        $pluginName = Inflector::underscore($pluginName);
+        Configure::write('Normal.menus.main.'.$pluginName, 1);
+    }</pre>
+Then in app\views\helpers\layout.php, you simply add
+<pre class="brush: php">//at the end of menu()
+        $themeMenu = Configure::read('Normal.menus.' . $menuAlias);
+        if ($themeMenu) $output .= $this-&gt;_themeMenu($themeMenu);
+//then
+    function _themeMenu($themeMenu)
+    {
+      $op = '&lt;ul class="sf-menu"&gt;';
+      foreach (array_keys($themeMenu) AS $p)
+        $op .= '&lt;li&gt;' . $this-&gt;View-&gt;element('normal_menu', array('plugin' =&gt; $p)) . '&lt;/li&gt;';
+      $op .= '&lt;/ul&gt;';
+      return $op;
+    }</pre>

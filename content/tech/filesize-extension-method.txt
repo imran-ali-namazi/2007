@@ -1,0 +1,28 @@
+<!--post_id: 27 / post_date: 2009-10-13 13:57:07-->
+This extension method humanizes the file size (FileInfo.Length is long but we need to make it into a decimal to get decimal places (long / long = long).<!--more-->
+<pre class="brush: c#">public static class Extensions
+
+{
+
+	public static readonly long Kb = 1024;
+
+	public static readonly long Mb = 1024 * 1024;
+
+	public static readonly long Gb = 1024 * 1024 * 1024;
+
+	public static string FileSize(this long length)
+
+	{
+		decimal size = Convert.ToDecimal(length);
+
+		if (size &gt; Gb)
+			return string.Format("{0:#.##} Gb", size / Gb);
+		else if (size &gt; Mb)
+			return string.Format("{0:#.##} Mb", size / Mb);
+		else if (size &gt; Kb)
+			return string.Format("{0:#.##} Kb", size / Kb);
+		else
+			return string.Format("{0} b", size);
+	}
+
+}</pre>

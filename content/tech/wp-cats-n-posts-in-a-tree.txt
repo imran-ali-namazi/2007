@@ -1,0 +1,32 @@
+<!--post_id: 63 / post_date: 2011-07-10 01:08:22-->
+I believe a sitemap should show posts under categories, and maintain the category hierarchy.
+
+wp_list_categories cannot be asked to include posts.
+And if you follow <a href="http://pastebin.com/YFQC6biN">this suggestion</a> and try and use get_posts, you will get a nasty surprise; it will get all posts in all sub categories of the one you want. and this WILL NOT DO!
+
+I found that you need this query and that you <a href="http://scribu.net/wordpress/extending-the-category-walker.html">can inherit the category walker</a> and pass that to the wp_list_categories method. Am impressed!<!--more-->
+<pre class="brush: sql">select object_id, p.post_status from wp_term_relationships r
+join wp_posts p on r.object_id = p.ID
+ where p.post_status = 'publish' and  r.term_taxonomy_id =
+ (SELECT term_taxonomy_id FROM wp_term_taxonomy WHERE taxonomy = 'category' and term_id = 4)</pre>
+So to hook the walker's end_el, we add
+<pre class="brush: php">//USAGE:
+//wp_list_categories( array( 'title_li' =&gt; '', 'echo' =&gt; false , 'walker' =&gt; new PCWalker() ) ) .
+
+class PCWalker extends Walker_Category {
+
+  function end_el(&amp;$output, $page, $depth, $args) {
+      global $wpdb;
+      $output .= "called with: " . $page-&gt;term_id;
+      $posts = $wpdb-&gt;get_results("select object_id as ID from wp_term_relationships r "
+        . "join wp_posts p on r.object_id = p.ID where p.post_status = 'publish' and r.term_taxonomy_id = "
+        . "(SELECT term_taxonomy_id FROM wp_term_taxonomy WHERE taxonomy = 'category' and term_id = " . $page-&gt;term_id . ")");
+      if($posts) :
+        $output .= '&lt;ul class="posts"&gt;'; foreach($posts as $post) { $output .= '
+	&lt;li&gt;'; $output .= '&lt;a title="link to ' . get_the_title($post-&gt;ID) . '" href="' . get_permalink($post-&gt;ID) . '"&gt;' . get_the_title($post-&gt;ID) . '&lt;/a&gt;'; $output .= '&lt;/li&gt;
+'; } $output .= '&lt;/ul&gt;
+';
+      endif;
+      parent::end_el(&amp;$output, $page, $depth, $args);
+    }
+}</pre>

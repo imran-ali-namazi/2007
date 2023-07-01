@@ -1,0 +1,36 @@
+<!--post_id: 23 / post_date: 2009-05-27 23:36:53-->
+[tab: Ludo]
+
+Tonight I set about trying to write <a href="http://en.wikipedia.org/wiki/Ludo">Ludo</a>. Full source code can be had <a title="Sourcecode: Ludo (VB.net)" href="http://cselian.com/d/code/ludo/ludo.zip">here</a>.
+
+These parts described below can be seen <a href="http://cselian.com/d/code/?folder=bHVkbw==">here</a> (or overleaf). It has things like Board, Coin, AdvanceCoin, BlockBuilder and it stores move history. See screenshots.<!--more-->
+
+<span style="text-decoration: underline;">BlockType</span> (enum): Normal / Home / Red / Green / Yellow / Blue
+
+<span style="text-decoration: underline;">Block</span> (structure): X / Y / Type / Color
+
+<span style="text-decoration: underline;">Coin</span> (class): Type / Color / Index / Block - where index is the position in an array of block the coin can be placed in from start to home. and Block is the current place it occupies.
+
+<span style="text-decoration: underline;">Board</span> (class): Holds array of blocks to be drawn on screen, array of paths a coin can take (depends on type). These are stored in local variables calculated in the constructor. It uses an inner class <span style="text-decoration: underline;">BlockBuilder</span> to generate this list.
+
+Board has the methods <span style="text-decoration: underline;">CreateCoin</span> and <span style="text-decoration: underline;">AdvanceCoin</span>. Create automatically places the coin at the start position. Advance returns false if the die value would cause the coin to move past home (&gt; HomeIndex).
+
+The windows Form where this is places hooks the paint method to draw blocks and coins. to invalidate (repaint). Form.Refresh() is called.
+
+The <span style="text-decoration: underline;">Play</span> button simply checks if the coin is home. If not, it tries to advance it. If that fails, it reports a message. Else it redraws the form to show the advanced coin.
+
+[tab: Form]
+
+[iframe src="http://cselian.com/d/code/serve.php?file=./ludo/LudoScreen.vb"]
+
+[tab: Board]
+
+[iframe src="http://cselian.com/d/code/serve.php?file=./ludo/Board.vb"]
+
+[tab: Round]
+
+[iframe src="http://cselian.com/d/code/serve.php?file=./ludo/Round.vb"]
+
+[tab: Screen]
+
+<img class="alignnone" src="http://cselian.com/d/code/ludo/ludo.png" alt="" width="582" height="356" />

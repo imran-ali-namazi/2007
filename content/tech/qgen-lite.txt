@@ -1,0 +1,30 @@
+<!--post_id: 200 / post_date: 2014-07-09 14:29:18-->
+<a href="http://cselian.com/blog/tech/apps/qgen-code-generator/">QGen</a> uses string.format to generate code. It can be replaced with <a href="http://cselian.com/blog/tech/primers/t4-templating/">T4</a> but still has its own charm.
+I rewrote it today stripping it to bare essentials. You can also see it on <a href="https://gist.github.com/ImranCS/5124d56c33038de71f82">gist.github.com</a>
+<!--more-->
+<pre class="brush: c#">
+       static void Main()
+        {
+        start:
+            var ofd = new OpenFileDialog { InitialDirectory = path };
+            if (ofd.ShowDialog() == DialogResult.Cancel)
+            {
+                MessageBox.Show("Nothing selected. exiting");
+                return;
+            }
+
+            var fmt = File.ReadAllText(ofd.FileName);
+            var lines = File.ReadAllLines(Path.Combine(path, "fields.txt"));
+            var op = string.Empty;
+            foreach (var line in lines)
+            {
+                op += string.Format(fmt, line.Split('	')).Replace("<<", "{").Replace(">>", "}");
+            }
+            var file = Path.ChangeExtension(ofd.FileName, "gen.txt");
+            File.WriteAllText(file, op);
+            System.Diagnostics.Process.Start(file);
+
+            if (MessageBox.Show("Again?", "Cselian Ivy AIO Lite", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                goto start;
+        }
+</pre>

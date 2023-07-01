@@ -1,0 +1,11 @@
+<!--post_id: 55 / post_date: 2011-06-11 04:37:03-->
+Baking is the way of generating code in cakephp.
+You can bake anything from plugins to views.
+First create the tables needed. based on where the cake bake command is invoked, the baker automatically connects to the default db configured in app/config and prompts what to bake.
+Logically, baking is done in this order. Model, Controller, Views.
+
+See a <a href="http://keyboarddance.wordpress.com/2007/10/02/setup-console-for-cakephp-for-windows/">quick tutorial</a> here or view the <a href="http://tv.cakephp.org/video/gwoo/2010/12/24/setting_up_the_cakephp_console_on_windows">original screencast</a> (with ads) or on <a href="http://www.youtube.com/watch?v=21Rt9HgITig">youtube</a>.
+
+To bake plugins, <a href="http://cakebaker.42dh.com/2008/01/26/baking-plug-ins/">see here</a>.
+
+&nbsp;

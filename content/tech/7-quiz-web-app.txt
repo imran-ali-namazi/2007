@@ -1,0 +1,28 @@
+<!--post_id: 50 / post_date: 2011-06-10 12:17:29-->
+[tab: Quiz]
+
+Written in June 2008, this application shows multiple choice questions. See <a href="http://cselian.com/d/code/?folder=cHAvNw==">the code</a> overleaf.
+
+The input radio controls are NOT runat=server so "qst" + questionNr is used.
+
+The questions are stored in a sqlite db. The answer is inline with the question, which uses a placeholder [options]. For ex:
+<blockquote>We would study English if we [go | would go | will go | went] to England.</blockquote>
+<!--more-->When submitting, feedback on each question is given for ex:
+<blockquote>Wrong! You gave 'would go' but Correct Answer is 'went '.</blockquote>
+[tab: aspx]
+
+[iframe src="http://cselian.com/d/code/serve.php?file=./pp/7/Test.aspx"]
+
+[tab: aspx.vb]
+
+[iframe src="http://cselian.com/d/code/serve.php?file=./pp/7/Test.aspx.vb"]
+
+[tab: Question]
+
+[iframe src="http://cselian.com/d/code/serve.php?file=./pp/7/Question.vb"]
+
+[tab: Sql Helper]
+
+[iframe src="http://cselian.com/d/code/serve.php?file=./pp/7/SQLHelper.vb"]
+
+&nbsp;

@@ -1,0 +1,37 @@
+<!--post_id: 111 / post_date: 2012-10-10 05:20:31-->
+[tab:PS]
+Sometimes the enabling/visibility of a control has to be based on whether a bounded property matches a value or not.
+
+Using the System.Windows.Data.IValueConverter and making use of ConverterParameter, we can set this up generically to compare with the bounded value as shown in the code tab.
+
+This is easier that setting up the code to programmatically do this / creating special properties like IsSomething. With judicious use of parameter name, this can be carried to any level.
+
+[tab:Code]
+<pre class="brush: c#">
+// Usage
+ConditionalConverter.Register("IsSomething", "What1", false, true);
+ConditionalConverter.Register("NotSomethingElse", "What2", false, true);
+// In WPF
+// ctl IsEnabled="{Binding Path=ItemName, Converter={StaticResource ConditionalConverter}, ConverterParameter=IsSomething}"
+
+
+// In the Converter
+private static Dictionary&lt;string, Tuple&lt;object, object, object&gt;&gt; Conditions = new Dictionary&lt;string,Tuple&lt;object,object,object&gt;&gt;;
+
+public static void Register&lt;T&gt;(string parameter, object value, T valueIfEqual, T valueIfNotEqual)
+{
+	Conditions[parameter] = new Tuple&lt;object, object, object&gt;(value, valueIfEqual, valueIfNotEqual);
+}
+
+public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+{
+	Tuple&lt;object, object, object&gt; condition;
+	if (Conditions.TryGetValue((string)parameter, out condition) == false)
+	{
+		throw new InvalidOperationException("Not registered with Parameter:" + parameter);
+	}
+
+	return condition.Item1.Equals(value) ? condition.Item2 : condition.Item3;
+}
+
+</pre>

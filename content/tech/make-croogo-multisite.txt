@@ -1,0 +1,20 @@
+<!--post_id: 57 / post_date: 2011-06-18 12:29:05-->
+Making croogo multisite db and theme per domain consists of the following:
+
+Am making the assumptions that db username is same for all sites, only the db will change. Also that the theme cannot be set from the admin panel, the theme with the name of the site will be used.
+
+Changes:
+<h4>.\app\config\bootstrap.php<!--more--></h4>
+<pre class="brush: php">$hostName = $_SERVER['HTTP_HOST'];
+  $siteNames = array('site1.cselian.com' =&gt; 's1', 'site2.cselian.com' =&gt; 's2');
+  $siteName = $siteNames[$hostName];
+  define('SITE_DB', 'cselian_' . $siteName);
+  define('SITE_THEME', $siteName);</pre>
+<h4>.\app\config\database.php</h4>
+<pre class="brush: php">  var $default = array(
+    ...
+    'database' =&gt; SITE_DB,</pre>
+<h4>.\app_controller.php</h4>
+<pre class="brush: php">  //find the line commented below and replace with the SITE_THEME one.
+  //$this-&gt;theme = Configure::read('Site.theme');
+  $this-&gt;theme = SITE_THEME;</pre>

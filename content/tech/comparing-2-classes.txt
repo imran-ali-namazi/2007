@@ -1,0 +1,7 @@
+<!--post_id: 31 / post_date: 2011-02-18 00:53:52-->
+When Comparing 2 classes, its possible to specify the following
+Properties only on the left
+Properties only on the right
+Same property but with different Types on either side
+
+A sample of this can be seen <a href="http://cselian.com/d/code/serve.php?file=./utils/Testing/ClassComparer.cs">here</a>

@@ -1,0 +1,37 @@
+<!--post_id: 62 / post_date: 2011-07-09 17:37:16-->
+[tab: PS]
+
+I found a <a href="http://wordpress.org/extend/plugins/table-of-contents-plus/">nice plugin</a> for <a href="http://dublue.com/plugins/toc/">adding a table of contents to a post</a> (like the wiki pages have)
+
+However it had one limitation, there is no back to top link. Since we want to go back to the toc (which can be at the top / bottom), Ive called it the back_to_toc feature.
+
+It has 3 options - not to show / show text / show image.
+
+See snippets overleaf or <a href="http://cselian.com/d/code/?folder=YXBwcy93cC10b2M=">explore the  code</a> (line 559 of <a href="http://cselian.com/d/code/serve.php?file=./apps/wp-toc/toc.php">toc.php</a> is where the real changes start). Or <a href="http://mini.cselian.com/info/ozone/medical-use">view it in action</a>.
+<!--more-->
+
+[tab: code]
+
+The plugin filters the <strong>the_content</strong> method and the code added to it is
+
+toc.php
+<pre class="brush: php">//Line 560
+$btt = "";
+if ($this-&gt;options['back_to_toc'] != TOC_BACKTOTOC_NONE)
+{
+	$img = $this-&gt;options['back_to_toc'] == TOC_BACKTOTOC_IMG;
+	$bttText = $img ? " " : "top"; //space else image doesnt show
+	$bttSuffix = $img ? "_img" : "";
+	$btt = '<a class="toc_to_top' . $bttSuffix . '" href="#toc_start">' . $bttText . '</a>';
+}
+
+//Line 617
+if ($this-&gt;options['back_to_toc'] != TOC_BACKTOTOC_NONE)
+	$html = '<a name="toc_start"></a>' . $html;</pre>
+screen.css
+<pre class="brush: css">a.toc_to_top { float: right; color: #444; } a.toc_to_top:hover { color: #C04242; }
+a.toc_to_top_img { float: right; background: url(back_to_top.png) no-repeat left center; width: 40px; }
+a.toc_to_top, a.toc_to_top_img { text-decoration: none; }</pre>
+[tab: ss]
+
+<img class="alignnone" src="http://cselian.com/d/code/apps/wp-toc/screen.png" alt="" width="499" height="244" />

@@ -1,3 +1,8 @@
+.above-header-content { margin: 150px 0 0 0;  }
+@media screen and (max-width: 994px) { /* responsive snap */
+	.above-header-content { margin: 70px 0 0 0; }
+}
+
 .img-fluid { width: 100%; }
 
 .video-bgd { background-color: #000; }

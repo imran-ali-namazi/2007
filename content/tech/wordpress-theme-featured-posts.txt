@@ -1,0 +1,62 @@
+<!--post_id: 59 / post_date: 2011-06-26 09:38:21-->
+[tab: PS]
+
+I'm modifying the <a href="http://wordpress.org/extend/plugins/wp-featured-post-with-thumbnail/">wordpress plugin</a> to include a custom Ordering and expose a method cs_get_featured_posts which wraps query_posts for use directly in a theme. I need this for letting the theme customize the results instead of simply using the widget provided in the original. <a href="http://cselian.com/d/code/?folder=YXBwcy9mZWF0LXBvc3Rz">Browse source</a>.
+
+Changelog
+<ul>
+	<li>Add featuredOrder to the add_featured method.</li>
+	<li>add cs_get_featured_posts method.</li>
+	<li>hook the query_posts to include custom joins and order by to make it more readable than trying to pass all as parameters.</li>
+</ul>
+To Arrive at this, I had to try WP_DEBUG and realised that the<a href="http://wordpress.stackexchange.com/questions/12814/order-by-meta-value-or-date"> suggested get_meta_sql</a> doesnt work by looking at query.php.<!--more-->
+
+TODO:
+<ul>
+	<li>Check accusation of <a href="http://wordpress.org/support/topic/plugin-wp-featured-post-with-thumbnail-ripp-off">javascript site hacking</a>.</li>
+	<li>Contact Original Author GdnGroups <a href="http://wordpress.org/tags/wp-featured-post-with-thumbnail?forum_id=10">via forum</a>.</li>
+	<li>Ask them to merge this / create new plugin.</li>
+	<li>What is purpose of featured-post.php?</li>
+</ul>
+[tab: SS]
+In <a href="http://wordpress.org/extend/themes/pressplay">my theme</a>, to get the picture:
+
+<img class="alignnone" src="http://cselian.com/d/code/apps/feat-posts/show%20featured.png" alt="" width="404" height="204" />
+
+I've only to add the lines below:
+<pre class="brush: php">cs_get_featured_posts();
+while ( have_posts() ) { the_post();
+		$id = get_the_ID();
+    echo '&lt;a href="' . get_permalink($id) . '"&gt;';
+		the_title(); echo "&lt;/a&gt;&lt;br/&gt;";
+  }</pre>
+
+<hr />
+
+And to configure it, the edit post looks like so.
+
+<img class="alignnone" src="http://cselian.com/d/code/apps/feat-posts/edit%20post.png" alt="" width="527" height="204" />
+
+[tab: php]
+<pre class="brush: php">function cs_get_featured_posts()
+{
+	//add filters for posts_join_paged, posts_where_paged, posts_orderby
+	query_posts('posts_per_page=10&amp;showposts=10');
+	//remove filters
+}
+function featposts_join_sql( $meta_sql )
+{
+    return " LEFT JOIN wp_postmeta as pmF ON (wp_posts.ID = pmF.post_id AND pmF.meta_key = 'featured') "
+    		.= " LEFT JOIN wp_postmeta as pmO ON (wp_posts.ID = pmO.post_id AND pmO.meta_key = 'featuredOrder') ";
+}
+function featposts_where_sql( $meta_sql )
+{
+    return " AND (pmF.meta_value = 1)";
+}
+function featposts_order_sql( $orderby )
+{
+    return 'pmO.meta_value ASC';
+}</pre>
+[tab: source]
+
+[iframe src="http://cselian.com/d/code/serve.php?file=./apps/feat-posts/cs-wp-featured-posts.php"]

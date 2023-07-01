@@ -1,0 +1,20 @@
+<!--post_id: 98 / post_date: 2012-02-01 00:47:05-->
+[tab:PS]
+NHibernate doesnt have a way to check whether a List has atleast one item.
+This kind of validation is important and if it fails, atleast the save should catch it.
+This can be done with a neat Mapper extension and an on save listener.
+<pre class="brush: c#">
+//Register with the NH Configuration
+configuration.SetListener(ListenerType.SaveUpdate, new HasAtleastOne.Listener());
+
+//Use in the classMap
+HasMany(x => x.Links).KeyColumn("Project_id").MustHaveAtleastOne();
+
+//Test the code
+var l = new HasAtleastOne.Listener();
+var e = new Project();
+l.TestSave(e);
+</pre>
+<!--more-->
+[tab:code]
+[iframe src="http://cselian.com/d/code/serve.php?file=./snippets/HasAtleastOne.cs"]

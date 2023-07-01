@@ -1,0 +1,13 @@
+<!--post_id: 26 / post_date: 2009-10-13 12:20:27-->
+Simplest was to have key / value pairs displayed in a ComboBox.<!--more-->
+<pre class="brush: c#">comboBox1.DisplayMember = "Value";
+comboBox1.ValueMember = "Key";
+Dictionary names = new Dictionary();
+names.Add("1", "one");
+names.Add("2", "two");
+comboBox1.DataSource = names.ToArray();
+
+//and then in the:
+comboBox1_SelectedValueChanged
+//you can listen to the
+comboBox1.SelectedValue / comboBox1.Text</pre>

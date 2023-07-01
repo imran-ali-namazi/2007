@@ -1,0 +1,19 @@
+<!--post_id: 99 / post_date: 2012-02-03 16:08:27-->
+[tab:PS]
+There is no equivalent for asp's create generichtmlcontrol.
+In some rare cases, it may make sense to do this. Esp when the generation of html is mixed with @ directives inside "" for attrs.
+
+*Note that class is a keyword and cant be used as property name in the anonymouse type. So we use CssClass instead and make the Extension method aware of this possibility.
+
+<pre class="brush: c#">
+@Html.StartTag("div", new { id ="name", CssClass = "cls", style= @Model.Styles})
+@Html.EndTag("div")
+</pre>
+
+
+UPDATE (Feb 10th): You can say @class to use the reserved keyword. So the code atts["class"] = atts["CssClass"]; is redundant
+
+
+<!--more-->
+[tab:code]
+[iframe src="http://cselian.com/d/code/serve.php?file=./snippets/MvcExtensions.cs"]

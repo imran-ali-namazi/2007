@@ -1,0 +1,33 @@
+<!--post_id: 39 / post_date: 2011-06-04 12:05:08-->
+[tab:Explanation]
+This is a simple crossmatrix of items by category or categories by item.
+Its developed as a simple standalone asp.net page with a backing static class (with xml serialization for persistence) 3 simple structs for item, category and ItemInCategory.
+
+There are 5 tabs which show one after the other (on the same page)
+Cats: Manage List of Categories / Add
+Items: Manage List of Items / Add
+Matrix: Lets you add items to categories.
+Cat Viewer: Shows list of categories, letting you see the items belonging to them.
+Item Viewer: Shows list of Items, and the categories in which they belong.<!--more-->
+
+Features:
+Simple Xml serialization (no other database)
+Easy to read manager class.
+Matrix &amp; Viewer tabs built with simple linq queries.
+
+See tabs overleaf for the code or <a href="http://cselian.com/d/code/?folder=cHAvMQ==">browse</a>.
+
+[tab:asp code behind]
+[iframe src="http://cselian.com/d/code/serve.php?file=./pp/1/Default.aspx.cs"]
+
+[tab:Item.cs]
+[iframe src="http://cselian.com/d/code/serve.php?file=./pp/1/Item.cs"]
+
+[tab:asp]
+[iframe src="http://cselian.com/d/code/serve.php?file=./pp/1/Default.aspx"]
+
+[tab: screenshots]
+
+<img class="alignnone" src="http://cselian.com/d/code/pp/1/matrix.png" alt="" width="348" height="261" />
+
+<img class="alignnone" src="http://cselian.com/d/code/pp/1/views.png" alt="" width="600" height="249" />

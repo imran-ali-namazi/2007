@@ -1,0 +1,7 @@
+<!--post_id: 119 / post_date: 2013-04-06 00:50:51-->
+As per <a href="http://stackoverflow.com/a/5437720">SO</a>,
+
+SET @count = 0;
+UPDATE `users` SET `users`.`id` = @count:= @count + 1;
+
+If the column is used as a foreign key in other tables, make sure you use ON UPDATE CASCADE instead of the default ON UPDATE NO ACTION for the foreign key relationship in that table.

@@ -1,0 +1,46 @@
+<!--post_id: 30 / post_date: 2010-12-03 13:19:19-->
+Assume you need to have a webform where any number of criteria can be added. Criteria is a set of input fields and N number can be added.
+
+We can use an asp-repeater for this. The problem is catching the add button postback and retrieving 1-n sets of fields from the input
+
+We can do this with 3 smart methods.<!--more-->
+<pre class="brush: c#">    protected void Page_Load(object sender, EventArgs e)
+    {
+        var addClicked = Request.Params["__EVENTTARGET"] == AddMore.ClientID;
+        var items = ReadFields();
+        if (items.Count == 0 || addClicked) items.Add(NewItem());
+        Fields.DataSource = items;
+        DataBind();
+        if (Names.Count == 0) AddMore.Visible = false;
+    }
+
+	private List ReadFields()
+	{
+		var result = new List();
+		var index = 0;
+
+		loop:
+		var name = string.Format("Fields$ctl{0}$name",index.ToString("D2"));
+		if ((name = Request[name]) != null)
+		{
+			var i = NewItem();
+			i.SelectedName = name;
+			result.Add(i);
+			index += 2; //because of separator
+            Names.Remove(name); //remove only after creating item instance
+            goto loop;
+		}
+		return result;
+	}
+
+	protected void Fields_ItemDataBound(object sender, RepeaterItemEventArgs e)
+	{
+		if (e.Item.ItemType == ListItemType.Separator) return;
+		var i = e.Item.DataItem as Item;
+		var ctl = e.Item.FindControl("name") as DropDownList;
+		i.Names.Insert(0, "");
+		ctl.DataSource = i.Names;
+        if (!string.IsNullOrEmpty(i.SelectedName) &amp;&amp; i.Names.Contains(i.SelectedName)) ctl.SelectedValue = i.SelectedName;
+        ctl.DataBind();
+	}</pre>
+Thats the core of it. See the <a href="http://cselian.com/d/code/serve.php?file=./web/Default.aspx">web</a> and <a href="http://cselian.com/d/code/serve.php?file=./web/Default.aspx.cs">aspx</a> files.

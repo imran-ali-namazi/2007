@@ -1,0 +1,30 @@
+<!--post_id: 53 / post_date: 2011-06-11 02:50:31-->
+QGen is a rapid code generator I've been developing since 2007.
+
+I've used it in 5 real time projects and found the enhanced productivity a boon.
+<h4>Features</h4>
+<ul>
+	<li>csv (/ tsv) file driven. So content can be managed in Excel making full use of Excel formulae, find and replace. Excel makes a good substitute for Class Diagrams and this way code always stays in sync</li>
+	<li>Switch folders based on namespaces (by using Lookup Columns)</li>
+	<li>Control when not to use a particular line in generation.</li>
+	<li>Generate different types of classes following the same set of rows (just add additional columns). Usually I create entities, FluentNH maps, Dtos and Views. This makes viewing your entire code base as easy as looking at a single excel file.</li>
+	<li>Merge contents of multiple files into one.<!--more--></li>
+</ul>
+Compared to <a href="http://www.hanselman.com/blog/T4TextTemplateTransformationToolkitCodeGenerationBestKeptVisualStudioSecret.aspx">T4</a>
+
+Advantage: Visibility of Data. I can never stress this too much. Its especially helpful in multi layer applications where entity design keeps evolving. In T4, you have to navigate all over the place to regenerate stuff. tt / ttinclude files look horrible unless you find / buy a good syntax highlighter for it.
+
+Disadvantage:
+
+Include / exclude in visual studio with its source control implication.
+
+Can't run c# code or load stuff from database.
+
+I will try and putup screenshots, and discuss some aspects of the code later.
+
+<h4>2014 Update:</h4>
+You can see it in action here:
+http://ivy.cselian.com/aio
+
+or the new one here
+http://cselian.com/blog/tech/apps/qgen-lite

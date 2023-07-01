@@ -1,0 +1,7 @@
+<!--post_id: 244 / post_date: 2015-06-09 07:09:24-->
+In Wordpress, jquery is configured not to define the $ variable since it may conflict with other libraries.
+You are therefore encouraged to use jQuery(document).ready(...
+
+But we are all creatures of habit and thus may prefer to use $. So simply add this line at the top of your js file / script tag
+
+if (typeof($) == 'undefined') $ = jQuery.noConflict(); // added by Imran@cselian.com to use in wordpress

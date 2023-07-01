@@ -1,0 +1,84 @@
+<!--post_id: 54 / post_date: 2011-06-11 02:56:08-->
+[tab: Statement]
+
+given an item which has a parent of itself, its possible to make this into a hierarchical object format and diplay it using a combination of ul / li.
+
+I've developed this in both C# and cakephp (See overleaf), and now in 2015 using Yii (without the Set class).<!--more-->
+
+<script src="https://gist.github.com/ImranCS/d964f26b57f1f49acbd8.js"></script>
+
+[tab: C#]
+
+Given a parentid, a flat List&lt;T&gt; can be loaded hierarchically using FindAll / ForEach and AddRange.
+
+Displaying can be done with a combination of ul / li calling a recursive function.
+<pre class="brush: c#">//Flat list to deep one.
+var list = GetFlatItems();
+foreach (var item in list)
+{
+  var children = list.FindAll(x =&gt; x.Parent == item.Id);
+  children.ForEach(x =&gt; x.Parent = item);
+  item.Children.AddRange(children);
+}
+roots = list.FindAll(x =&gt; x.Children.Count &gt; 0 &amp;&amp; x.Parent == null);
+
+//roots is now Top-level parent items
+//In the page, just add a ul like so:
+//    &lt;ul id="ItemsCtl" runat="server" /&gt;
+foreach (var item in roots)
+{
+  AddItem(item, ItemsCtl);
+}
+
+private void AddItem(Info item, HtmlGenericControl parent)
+{
+  var info = new Literal { Text = item.Name };
+  var div = new HtmlGenericControl("li") { ID = "d" };
+  div.Controls.Add(img); div.Controls.Add(info);
+  parent.Controls.Add(div);
+  if (item.Children.Count &gt; 0)
+  {
+    var ul = new HtmlGenericControl("ul") { ID = "u" };
+    parent.Controls.Add(ul);
+    foreach (var e in item.Children) AddItem(e, ul);
+  }
+}</pre>
+[tab: php]
+Developed in <a href="http://cakephp.org">Cakephp</a>, <a href="http://book.cakephp.org/view/1487/Set">Set</a> is a library used for manipulation of arrays. Data can be seen overleaf.
+<pre class="brush: php">//Controller
+$res = $this-&gt;Item-&gt;find('all');
+$res = Set::combine($res, '{n}.Item.id', '{n}.Item.name', '{n}.Skill.parent_id');
+$this-&gt;set('items', $res);
+
+//View (inside a ul tag).
+foreach ($items[0] as $key=&gt;$itm) show($items, $key, $itm);
+function show($a, $ky, $itm)
+{
+  echo "&lt;li&gt;" . $itm . "&lt;/li&gt;";
+  if (array_key_exists($ky, $a))
+  {
+    echo "&lt;ul&gt;";
+    foreach ($a[$ky] as $key=&gt;$itm) show($a, $key, $itm);
+    echo "&lt;/ul&gt;";
+  }
+}</pre>
+[tab: php data]
+Categories and subcategories of topics. array[1] is the children of item 1 which is a root item (parent 0)
+<pre>Array
+(
+    [0] =&gt; Array
+        (
+            [1] =&gt; .net
+            [7] =&gt; java
+        )
+
+    [1] =&gt; Array
+        (
+            [2] =&gt; ado.net
+            [3] =&gt; generics
+            [4] =&gt; asp.net
+            [5] =&gt; silverlight
+            [6] =&gt; authentication
+        )
+
+)</pre>

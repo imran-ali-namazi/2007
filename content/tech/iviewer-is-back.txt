@@ -1,0 +1,7 @@
+<!--post_id: 112 / post_date: 2012-10-14 11:47:57-->
+A part of me since December 2000, IViewer is the application I literally learnt VB6 with.
+In 2006, I stopped working in vb6 and also stopped working on it.
+
+Then one day I rewrote the basic navigation, wmp control player in VB.net. In 2008 I refined the search as you type feature. Still convinced the UI is one of the best there is, I recently began reviving development and am pleased to announce that playlists have been included.
+
+You can see <a title="IViewer" href="http://cselian.com/d/code/?folder=aXZpZXdlcg==" target="_blank">pictures here</a>, <a title="IViewer Setup" href="http://cselian.com/d/code/iviewer/setup/publish.htm">setup here</a>, and someday maybe <a title="Imran's Github" href="https://github.com/ImranCS">code here</a>.
