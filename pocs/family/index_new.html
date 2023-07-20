@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+  <head>
+
+  <meta http-equiv="content-type" content="text/html; charset=windows-1250">
+
+  <meta name="generator" content="PSPad editor, www.pspad.com">
+
+  <title>Namazi Family Tree</title>
+
+  </head>
+
+  <body onload="Body_Resized();" onresize="Body_Resized();">
+
+
+
+<style type="text/css">
+
+/* Container Divs */
+
+body { font-family: Verdana, Arial, "MS Sans Serif"; cursor: default; overflow: scroll; overflow-x: hidden; margin: 0px; margin: 0px;
+
+  background: url(img/tree.gif) no-repeat fixed right bottom; text-align: center; }
+
+#header { background-color: white; height: 80px; }
+
+.family { /*height: 100%;*/ width: 480px; margin: 15px; }
+
+#information, .family, #menu { text-align: left; }
+
+
+
+/*  */
+
+#left, #right { color: #3D4F55; font-weight: bold; font-size: 10pt; text-align: left; border-top: 2px solid white;
+
+  height: 80px; overflow: hidden; width: 150px; padding: 0px 10px 0px 10px; }
+
+#left a, #themes a:visited { color: #3D4F55; } #themes img { margin-right: 3px; border: none; } 
+
+#left { line-height: 13pt; float: left; border-right: 1px #B9C0C2 solid; }
+
+#right { float: right; border-left: 1px #B9C0C2 solid; }
+
+#right input { position: relative; top: 1px; /*margin-bottom: 6px;*/ margin: 0px; }
+
+.stats { padding: 10px; }
+
+
+
+#msg a { color: blue; font-weight: bold; }
+
+
+
+</style>
+
+
+
+
+
+<div id="header">
+
+  <div id="right">
+
+    <u title="Choose to hide spouse before collapsing a person's family">Help:</u><br>
+
+    &nbsp;&nbsp;&nbsp;<a href="javascript:OpenPopup('help');">how to use</a>
+
+  </div>
+
+  <div id="left">
+
+    <u>Links:</u><br>
+
+    &nbsp;&nbsp;&nbsp;<a href="mailto:ImranAli@namazitree.net">contact</a><br>
+
+    &nbsp;&nbsp;&nbsp;<a href="index_html.html">html version</a>
+
+  </div>
+
+  <img src="img/nft.gif" alt="Namazi Family Tree (gif, 6 kB)" style="margin: 3px;" height="70" width="480">
+
+</div>
+
+
+
+<div id="flashcont" style="height: 300px;">
+
+</div>
+
+
+
+<script type="text/javascript">
+
+function Body_Resized()
+
+{
+
+  var cont = document.getElementById("flashcont");
+
+  if (cont != null)
+
+  {
+
+    cont.style.height=document.body.clientHeight - 80;
+
+    cont.innerHTML = '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="100%" height="100%"><param name="movie" value="namazi.swf"><param name="quality" value="high"><param name="bgcolor" value=><param name="wmode" value="transparent"><embed src="namazi.swf" wmode="transparent" quality="high" bgcolor= width="100%" height="100%" name="menu" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></object>';
+
+  }
+
+}
+
+
+
+</script>
+
+
+
+  </body>
+
+</html>
+

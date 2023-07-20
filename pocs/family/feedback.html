@@ -1,0 +1,192 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+  <head>
+
+  <meta http-equiv="content-type" content="text/html; charset=windows-1250">
+
+  <meta name="generator" content="PSPad editor, www.pspad.com">
+
+  <title>Feedback [Namazi Family Tree]</title>
+
+  </head>
+
+  <body id="green">
+
+
+
+<style type="text/css">
+
+
+
+/* Themes */
+
+body#red   { background-color: #E6E1DD; } #red .head, #red .child     { border-color: #E6E1DD; }
+
+body#green { background-color: #E1E6DD; } #green .head, #green .child { border-color: #E1E6DD; }
+
+body#blue  { background-color: #DDE1E6; } #blue .head, #blue .child   { border-color: #DDE1E6; }
+
+
+
+/* Container Divs */
+
+body { font-family: Verdana, Arial, "MS Sans Serif"; cursor: default; overflow: scroll; overflow-x: hidden; margin: 0px;
+
+  background: url(img/tree.gif) no-repeat fixed right bottom; text-align: center; }
+
+#header { background-color: white; height: 80px; }
+
+.family { /*height: 100%;*/ width: 480px; margin: 15px; }
+
+#information, .family, #menu { text-align: left; }
+
+
+
+/*  */
+
+#themes, #options { color: #3D4F55; font-weight: bold; font-size: 10pt; text-align: left; border-top: 2px solid white;
+
+  height: 80px; overflow: hidden; width: 150px; padding: 0px 10px 0px 10px; }
+
+#themes a, #themes a:visited { color: #3D4F55; } #themes img { margin-right: 3px; border: none; } 
+
+#themes { line-height: 13pt; float: left; border-right: 1px #B9C0C2 solid; }
+
+#options { float: right; border-left: 1px #B9C0C2 solid; }
+
+#options input { position: relative; top: 1px; /*margin-bottom: 6px;*/ margin: 0px; }
+
+.stats { padding: 10px; }
+
+
+
+#feedback { width: 510px; font-size: 9pt; border: 1px solid #C3CBCB; }
+
+#feedback span { width: 80px; font-weight: bold; display: block; float: left; line-height: 22px; text-align: right; margin: 4px 12px 4px 8px; clear: left; }
+
+#feedback input, #feedback textarea, #feedback select 
+
+  { width: 380px; float: left; height: 24px; margin: 4px 12px 4px 0px; }
+
+</style>
+
+
+
+<script type="text/javascript">
+
+function ApplyTheme(Theme)
+
+{
+
+  document.body.id=Theme;
+
+  return;
+
+}
+
+</script>
+
+
+
+<div id="header">
+
+  <div id="options">
+
+    <u>Links:</u><br>
+
+      <a href="index.html">Back Home</a>
+
+  </div>
+
+  <div id="themes">
+
+    <u>Themes:</u><br>
+
+    &nbsp;&nbsp;&nbsp;<a href="javascript:ApplyTheme('red');"><img src="css/color.gif" style="background-color: maroon;">red</a><br>
+
+    &nbsp;&nbsp;&nbsp;<a href="javascript:ApplyTheme('green');"><img src="css/color.gif" style="background-color: #008041;">green</a><br>
+
+    &nbsp;&nbsp;&nbsp;<a href="javascript:ApplyTheme('blue');"><img src="css/color.gif" style="background-color: navy;">blue</a>
+
+  </div>
+
+  <img src="img/nft.gif" alt="nft.gif, 6 kB" title="nft" style="margin: 3px;" height="70" width="480">
+
+</div>
+
+
+
+  <h5 style="margin: 30px 0px 15px 0px; text-align: center;"><u>Feedback</u></h5>
+
+  
+
+<center>
+
+ <form action="submitfeedback.php" method="post" name="feedback">
+
+  <div id="feedback" style="text-align: center;">
+
+    <br>
+
+    <span>Name:</span> <input maxlength="30" name="name" />
+
+    <br><br>
+
+    
+
+    <span>Email:</span> <input maxlength="30" name="email" />
+
+    <br><br>
+
+
+
+    <span stylae="line-height: 11pt;">Category:</span> 
+
+    <select name="category" style="font: 12pt 'Courier';">
+
+      <option value="Query">Query - Let us know of any questions.</option>
+
+      <option value="Error">Error - Have we made a mistake? Tell Us.</option>
+
+      <option value="Info">Info  &nbsp;- Give us more information.</option>
+
+      <option value="Other">Other</option>
+
+    </select>
+
+    <br><br>
+
+
+
+    <span>Message:</span> <textarea name="comments" style="height: 260px;" rows="12"></textarea>
+
+    <br><br>
+
+    
+
+    <span></span><input type="submit" accesskey="S" style="background-color: #CDCDCD; line-height: 14pt; padding: 0px 8px 0px 8px; height: 
+
+    30px;" value="Send Us Your Feedback">
+
+    
+
+    
+
+    
+
+    <div style="clear: both; height: 15px; overflow: hidden;"></div>
+
+  </div>
+
+ </form>
+
+</center>
+
+
+
+  </body>
+
+</html>
+
