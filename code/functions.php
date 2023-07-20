@@ -1,5 +1,5 @@
 <?php
-am_var('items-with-submenu', [
+am_var('sections', [
 	'yieldmore',
 	'writing',
 	'shared',
@@ -7,8 +7,8 @@ am_var('items-with-submenu', [
 ]);
 
 function before_render() {
-	foreach (am_var('items-with-submenu') as $slug) {
-		$path = am_var('path') . '/content/' . $slug . '/';
+	foreach (am_var('sections') as $slug) {
+		$path = am_var('path') . '/' . $slug . '/';
 		$extension = '.txt';
 		$file = $path . am_var('node') . $extension;
 		if (file_exists($file)) {
