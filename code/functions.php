@@ -1,11 +1,4 @@
 <?php
-am_var('sections', [
-	'yieldmore',
-	'writing',
-	'shared',
-	'tech',
-]);
-
 function before_render() {
 	foreach (am_var('sections') as $slug) {
 		$path = am_var('path') . '/' . $slug . '/';
@@ -48,6 +41,7 @@ function after_file() {
 function site_humanize($txt, $field = 'title') {
 	$pages = [
 		'yieldmore' => 'YieldMore 2013',
+		'pocs' => 'POCs',
 	];
 
 	if (array_key_exists($key = strtolower($txt), $pages))

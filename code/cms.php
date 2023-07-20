@@ -12,9 +12,15 @@ bootstrap([
 
 	'folder' => 'content/',
 	'support_page_parameters' => true,
+	'sections' => [
+		'yieldmore',
+		'writing',
+		'pocs',
+		'shared',
+		'tech',
+	],
 
 	'start_year' => '2005',
-
 	'theme' => 'biz-land',
 	//'image-in-logo' => '-logo.png?fver=3',
 
@@ -34,6 +40,9 @@ bootstrap([
 	'url' => $local ? replace_vars('http://localhost%port%/cselian/', 'port') : 'https://cselian.com/',
 	'path' => SITEPATH,
 ]);
+
+$fwe = SITEPATH . '/pocs/' . am_var('node') . '.';
+if (disk_one_of_files_exist($fwe)) am_var('folder', 'pocs/'); //this way, render will search here and we dont need a complex did_render_page supporting multiple extensions
 
 render();
 ?>
