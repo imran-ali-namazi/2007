@@ -1,3 +1,4 @@
+```
 <?php
 
 write_posts(get_pages($db_prefix = 'wp_'), $site_name = 'cselian blog');
@@ -62,3 +63,4 @@ function db_select($query)
 	return $rows;
 }
 ?>
+```
