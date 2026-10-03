@@ -1,4 +1,8 @@
-<!--post_id: 25 / post_date: 2009-09-26 00:04:01-->
+[meta]
+post_id: 25
+post_date: 2009-09-26 00:04:01
+[/meta]
+
 A tool I wrote myself back in October 07, I find this a must have whenever I am working on a website. It tracks changed files and given a local and ftp base path, will upload all files.
 
 It uses the following:

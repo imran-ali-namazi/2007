@@ -1,4 +1,8 @@
-<!--post_id: 26 / post_date: 2009-10-13 12:20:27-->
+[meta]
+post_id: 26
+post_date: 2009-10-13 12:20:27
+[/meta]
+
 Simplest was to have key / value pairs displayed in a ComboBox.<!--more-->
 <pre class="brush: c#">comboBox1.DisplayMember = "Value";
 comboBox1.ValueMember = "Key";

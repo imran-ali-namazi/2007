@@ -1,4 +1,8 @@
-<!--post_id: 112 / post_date: 2012-10-14 11:47:57-->
+[meta]
+post_id: 112
+post_date: 2012-10-14 11:47:57
+[/meta]
+
 A part of me since December 2000, IViewer is the application I literally learnt VB6 with.
 In 2006, I stopped working in vb6 and also stopped working on it.
 

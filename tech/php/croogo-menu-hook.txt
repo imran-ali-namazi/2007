@@ -1,4 +1,8 @@
-<!--post_id: 68 / post_date: 2011-08-12 03:45:25-->
+[meta]
+post_id: 68
+post_date: 2011-08-12 03:45:25
+[/meta]
+
 The plugin bootstrapper can add a normal menu just like an admin menu.
 
 All you need to do is add a method to app\libs\croogo.php<!--more-->

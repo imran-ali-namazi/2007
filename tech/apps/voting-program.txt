@@ -1,4 +1,8 @@
-<!--post_id: 43 / post_date: 2011-06-04 21:58:56-->
+[meta]
+post_id: 43
+post_date: 2011-06-04 21:58:56
+[/meta]
+
 [tab: Intro]
 
 For counting votes (admin only), this simple program (written in 45 minutes) shows a set of buttons for each candidate and you can click on the button to increase his votes.

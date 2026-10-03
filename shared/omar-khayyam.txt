@@ -1,4 +1,8 @@
-<!--post_id: 49 / post_date: 2011-06-08 07:02:59-->
+[meta]
+post_id: 49
+post_date: 2011-06-08 07:02:59
+[/meta]
+
 <a href="http://en.wikipedia.org/wiki/Omar_Khayy%C3%A1m">Omar Khayyám</a>, a Persian mathematician, astronomer, philosopher and poet, who also wrote treatises on mechanics, geography, and music.
 
 And, as the Cock crew, those who stood before

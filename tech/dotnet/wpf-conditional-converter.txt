@@ -1,4 +1,8 @@
-<!--post_id: 111 / post_date: 2012-10-10 05:20:31-->
+[meta]
+post_id: 111
+post_date: 2012-10-10 05:20:31
+[/meta]
+
 [tab:PS]
 Sometimes the enabling/visibility of a control has to be based on whether a bounded property matches a value or not.
 

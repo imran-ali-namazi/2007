@@ -1,4 +1,8 @@
-<!--post_id: 63 / post_date: 2011-07-10 01:08:22-->
+[meta]
+post_id: 63
+post_date: 2011-07-10 01:08:22
+[/meta]
+
 I believe a sitemap should show posts under categories, and maintain the category hierarchy.
 
 wp_list_categories cannot be asked to include posts.

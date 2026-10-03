@@ -1,4 +1,8 @@
-<!--post_id: 59 / post_date: 2011-06-26 09:38:21-->
+[meta]
+post_id: 59
+post_date: 2011-06-26 09:38:21
+[/meta]
+
 [tab: PS]
 
 I'm modifying the <a href="http://wordpress.org/extend/plugins/wp-featured-post-with-thumbnail/">wordpress plugin</a> to include a custom Ordering and expose a method cs_get_featured_posts which wraps query_posts for use directly in a theme. I need this for letting the theme customize the results instead of simply using the widget provided in the original. <a href="http://cselian.com/d/code/?folder=YXBwcy9mZWF0LXBvc3Rz">Browse source</a>.

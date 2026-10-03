@@ -1,4 +1,8 @@
-<!--post_id: 52 / post_date: 2011-06-11 02:35:29-->
+[meta]
+post_id: 52
+post_date: 2011-06-11 02:35:29
+[/meta]
+
 <h4><a href="http://en.wikipedia.org/wiki/Object-relational_mapping">Orm</a></h4>
 Entities and their maps are managed in Excel and generated using <a title="QGen – Code Generator" href="http://cselian.com/blog/tech/apps/qgen-code-generator/">QGen</a>.
 <ul>

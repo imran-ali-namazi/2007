@@ -1,4 +1,8 @@
-<!--post_id: 39 / post_date: 2011-06-04 12:05:08-->
+[meta]
+post_id: 39
+post_date: 2011-06-04 12:05:08
+[/meta]
+
 [tab:Explanation]
 This is a simple crossmatrix of items by category or categories by item.
 Its developed as a simple standalone asp.net page with a backing static class (with xml serialization for persistence) 3 simple structs for item, category and ItemInCategory.

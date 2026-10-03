@@ -1,4 +1,8 @@
-<!--post_id: 57 / post_date: 2011-06-18 12:29:05-->
+[meta]
+post_id: 57
+post_date: 2011-06-18 12:29:05
+[/meta]
+
 Making croogo multisite db and theme per domain consists of the following:
 
 Am making the assumptions that db username is same for all sites, only the db will change. Also that the theme cannot be set from the admin panel, the theme with the name of the site will be used.

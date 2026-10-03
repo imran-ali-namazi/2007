@@ -1,4 +1,8 @@
-<!--post_id: 119 / post_date: 2013-04-06 00:50:51-->
+[meta]
+post_id: 119
+post_date: 2013-04-06 00:50:51
+[/meta]
+
 As per <a href="http://stackoverflow.com/a/5437720">SO</a>,
 
 SET @count = 0;

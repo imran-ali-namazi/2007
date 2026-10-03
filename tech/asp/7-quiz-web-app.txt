@@ -1,4 +1,8 @@
-<!--post_id: 50 / post_date: 2011-06-10 12:17:29-->
+[meta]
+post_id: 50
+post_date: 2011-06-10 12:17:29
+[/meta]
+
 [tab: Quiz]
 
 Written in June 2008, this application shows multiple choice questions. See <a href="http://cselian.com/d/code/?folder=cHAvNw==">the code</a> overleaf.

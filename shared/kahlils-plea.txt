@@ -1,4 +1,8 @@
-<!--post_id: 32 / post_date: 2011-03-09 15:12:51-->
+[meta]
+post_id: 32
+post_date: 2011-03-09 15:12:51
+[/meta]
+
 from <a title="Google: khalil the heretic" href="http://www.google.co.in/search?q=khalil+the+heretic">Kahlil the Heretic</a>.
 
 Nov 2013: Also see <a href="http://nothingistic.org/library/gibran/forerunner/">the whole Forerunner</a> - kind of like [link type=post id=38]Rand's[/link] [link type=post id=105]Fountainhead[/link].

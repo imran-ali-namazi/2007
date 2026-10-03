@@ -1,4 +1,8 @@
-<!--post_id: 31 / post_date: 2011-02-18 00:53:52-->
+[meta]
+post_id: 31
+post_date: 2011-02-18 00:53:52
+[/meta]
+
 When Comparing 2 classes, its possible to specify the following
 Properties only on the left
 Properties only on the right

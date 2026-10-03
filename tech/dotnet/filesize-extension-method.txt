@@ -1,4 +1,8 @@
-<!--post_id: 27 / post_date: 2009-10-13 13:57:07-->
+[meta]
+post_id: 27
+post_date: 2009-10-13 13:57:07
+[/meta]
+
 This extension method humanizes the file size (FileInfo.Length is long but we need to make it into a decimal to get decimal places (long / long = long).<!--more-->
 <pre class="brush: c#">public static class Extensions
 

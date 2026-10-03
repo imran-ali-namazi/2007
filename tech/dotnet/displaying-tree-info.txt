@@ -1,4 +1,8 @@
-<!--post_id: 54 / post_date: 2011-06-11 02:56:08-->
+[meta]
+post_id: 54
+post_date: 2011-06-11 02:56:08
+[/meta]
+
 [tab: Statement]
 
 given an item which has a parent of itself, its possible to make this into a hierarchical object format and diplay it using a combination of ul / li.

@@ -1,4 +1,8 @@
-<!--post_id: 55 / post_date: 2011-06-11 04:37:03-->
+[meta]
+post_id: 55
+post_date: 2011-06-11 04:37:03
+[/meta]
+
 Baking is the way of generating code in cakephp.
 You can bake anything from plugins to views.
 First create the tables needed. based on where the cake bake command is invoked, the baker automatically connects to the default db configured in app/config and prompts what to bake.

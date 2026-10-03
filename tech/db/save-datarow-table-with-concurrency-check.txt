@@ -1,4 +1,8 @@
-<!--post_id: 94 / post_date: 2011-11-15 23:03:06-->
+[meta]
+post_id: 94
+post_date: 2011-11-15 23:03:06
+[/meta]
+
 [tab:PS]
 You can initialize a dataadaptor with a top 0 * from table, pass that to a SqlCommandBuilder to get insert / update commands.
 

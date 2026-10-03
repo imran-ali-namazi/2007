@@ -1,4 +1,8 @@
-<!--post_id: 98 / post_date: 2012-02-01 00:47:05-->
+[meta]
+post_id: 98
+post_date: 2012-02-01 00:47:05
+[/meta]
+
 [tab:PS]
 NHibernate doesnt have a way to check whether a List has atleast one item.
 This kind of validation is important and if it fails, atleast the save should catch it.

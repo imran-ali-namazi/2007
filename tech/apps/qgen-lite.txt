@@ -1,4 +1,8 @@
-<!--post_id: 200 / post_date: 2014-07-09 14:29:18-->
+[meta]
+post_id: 200
+post_date: 2014-07-09 14:29:18
+[/meta]
+
 <a href="http://cselian.com/blog/tech/apps/qgen-code-generator/">QGen</a> uses string.format to generate code. It can be replaced with <a href="http://cselian.com/blog/tech/primers/t4-templating/">T4</a> but still has its own charm.
 I rewrote it today stripping it to bare essentials. You can also see it on <a href="https://gist.github.com/ImranCS/5124d56c33038de71f82">gist.github.com</a>
 <!--more-->

@@ -1,4 +1,8 @@
-<!--post_id: 38 / post_date: 2011-06-02 11:12:42-->
+[meta]
+post_id: 38
+post_date: 2011-06-02 11:12:42
+[/meta]
+
 From the Preface to <a href="http://en.wikipedia.org/wiki/The_Fountainhead">The_Fountainhead</a>, Ayn Rand, May  1968.
 <blockquote>The noble soul has reverence for itself. - Frederich Nietzsche</blockquote>
 This view of man has rarely been expressed in human history. Today, it is virtually non-existent. Yet this is the view with which - in various degrees of longing, wistfulness, passion and agonized confusion - the best of mankind's youth start out in life. It is not even a view, for most of them, but a foggy, groping, undefined sense made of raw pain and incommunicable happiness. It is a sense of enormous expectation, the sense that one's life is important, that great achievements are within one's capacity, and that great things lie ahead.<!--more-->

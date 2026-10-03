@@ -1,4 +1,8 @@
-<!--post_id: 82 / post_date: 2011-08-25 23:12:06-->
+[meta]
+post_id: 82
+post_date: 2011-08-25 23:12:06
+[/meta]
+
 Ode to Monty, by cousin Jupe.
 From <a href="http://www.amazon.com/Rancher-Ferrets-Range-Ferret-Chronicles/dp/product-description/0743227557">Monty and Cheyenne</a>, <a href="http://yaktalk.blogspot.com/2008/02/curious-lives-by-richard-bach.html">Curious Lives</a>.
 

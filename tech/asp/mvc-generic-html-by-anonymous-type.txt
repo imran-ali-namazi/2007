@@ -1,4 +1,8 @@
-<!--post_id: 99 / post_date: 2012-02-03 16:08:27-->
+[meta]
+post_id: 99
+post_date: 2012-02-03 16:08:27
+[/meta]
+
 [tab:PS]
 There is no equivalent for asp's create generichtmlcontrol.
 In some rare cases, it may make sense to do this. Esp when the generation of html is mixed with @ directives inside "" for attrs.

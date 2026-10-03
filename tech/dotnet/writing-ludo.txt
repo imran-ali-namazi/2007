@@ -1,4 +1,8 @@
-<!--post_id: 23 / post_date: 2009-05-27 23:36:53-->
+[meta]
+post_id: 23
+post_date: 2009-05-27 23:36:53
+[/meta]
+
 [tab: Ludo]
 
 Tonight I set about trying to write <a href="http://en.wikipedia.org/wiki/Ludo">Ludo</a>. Full source code can be had <a title="Sourcecode: Ludo (VB.net)" href="http://cselian.com/d/code/ludo/ludo.zip">here</a>.

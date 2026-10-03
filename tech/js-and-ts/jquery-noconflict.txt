@@ -1,4 +1,8 @@
-<!--post_id: 244 / post_date: 2015-06-09 07:09:24-->
+[meta]
+post_id: 244
+post_date: 2015-06-09 07:09:24
+[/meta]
+
 In Wordpress, jquery is configured not to define the $ variable since it may conflict with other libraries.
 You are therefore encouraged to use jQuery(document).ready(...
 

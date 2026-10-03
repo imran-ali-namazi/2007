@@ -1,4 +1,8 @@
-<!--post_id: 53 / post_date: 2011-06-11 02:50:31-->
+[meta]
+post_id: 53
+post_date: 2011-06-11 02:50:31
+[/meta]
+
 QGen is a rapid code generator I've been developing since 2007.
 
 I've used it in 5 real time projects and found the enhanced productivity a boon.

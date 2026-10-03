@@ -1,4 +1,8 @@
-<!--post_id: 60 / post_date: 2011-06-26 11:10:21-->
+[meta]
+post_id: 60
+post_date: 2011-06-26 11:10:21
+[/meta]
+
 Im looking for a nice way to maintain inter-product dependancy matrix.
 
 For example:

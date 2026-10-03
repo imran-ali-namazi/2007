@@ -1,4 +1,8 @@
-<!--post_id: 30 / post_date: 2010-12-03 13:19:19-->
+[meta]
+post_id: 30
+post_date: 2010-12-03 13:19:19
+[/meta]
+
 Assume you need to have a webform where any number of criteria can be added. Criteria is a set of input fields and N number can be added.
 
 We can use an asp-repeater for this. The problem is catching the add button postback and retrieving 1-n sets of fields from the input
